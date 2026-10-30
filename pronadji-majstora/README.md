@@ -1,4 +1,6 @@
-# Pronađi Majstora
+# MOHIRO gradnja
+
+Čvrst temelj. Trajno delo.
 
 Landing page za gradnju porodičnih kuća, vikendica i stambenih objekata.
 
@@ -7,22 +9,24 @@ Sajt je jedan `index.html` fajl sa ugrađenim CSS-om i malo JavaScript-a. Nema b
 ## Struktura
 
 ```
-pronadji-majstora/
+mohiro-gradnja/
 ├── index.html          # ceo sajt
 ├── assets/
-│   ├── logo.png        # logotip (header i footer)
-│   ├── favicon.png     # ikonica u tabu pretraživača
-│   └── radovi/         # ovde stavite fotografije objekata
+│   ├── logo-mohiro.svg # znak MOHIRO (u headeru i footeru je ugrađen direktno u kod)
+│   ├── favicon.svg     # ikonica u tabu pretraživača
+│   ├── favicon.png     # ikonica za telefon (početni ekran)
+│   ├── radovi/         # fotografije sa gradilišta
+│   └── video/          # snimci (hero i galerija) sa naslovnim slikama
 └── README.md
 ```
 
 ## Postavljanje na GitHub Pages
 
-1. Na GitHub-u napravite novi repozitorijum, na primer `pronadji-majstora`.
+1. Na GitHub-u napravite novi repozitorijum, na primer `mohiro-gradnja`.
 2. Otpremite sadržaj ovog foldera (dugme "Add file" → "Upload files", ili preko git-a, vidi ispod).
 3. U repozitorijumu otvorite Settings → Pages.
 4. Pod "Build and deployment" izaberite Source: "Deploy from a branch", grana `main`, folder `/ (root)`, pa Save.
-5. Posle minut-dva sajt je dostupan na `https://VASE-KORISNICKO-IME.github.io/pronadji-majstora/`.
+5. Posle minut-dva sajt je dostupan na `https://VASE-KORISNICKO-IME.github.io/mohiro-gradnja/`.
 
 Preko git-a iz terminala:
 
@@ -32,7 +36,7 @@ git init
 git add .
 git commit -m "Prva verzija sajta"
 git branch -M main
-git remote add origin https://github.com/VASE-KORISNICKO-IME/pronadji-majstora.git
+git remote add origin https://github.com/VASE-KORISNICKO-IME/mohiro-gradnja.git
 git push -u origin main
 ```
 
@@ -49,33 +53,28 @@ git push -u origin main
 Telefon, email i radno vreme su privremeni. Nađite i zamenite u `index.html`:
 
 - `+381 60 000 0000` (pojavljuje se dva puta)
-- `kontakt@pronadjimajstora.rs` (pojavljuje se dva puta)
+- `kontakt@mohiro.rs` (pojavljuje se dva puta)
 - `Ponedeljak do subota, 7 do 17 h`
 
-### 3. Fotografije
+### 3. Instagram
 
-Stavite slike u `assets/radovi/` (preporuka: JPG ili WebP, širine oko 1600 px, do 300 KB po slici).
+Svi linkovi ka Instagramu i dalje vode na `@pronadji__majstora__`. Ako MOHIRO ima novi profil, u `index.html` nađite `pronadji__majstora__` i zamenite ga novim korisničkim imenom (pojavljuje se pet puta).
 
-U `index.html` svako mesto za sliku izgleda ovako:
+### 4. Fotografije i video
 
-```html
-<div class="ph">
-  <svg ...>...</svg>
-  Mesto za sliku
-</div>
-```
+Fotografije i snimci od vlasnika su već na sajtu, u `assets/radovi/` i `assets/video/`.
 
-Zamenite ceo taj `<div class="ph">...</div>` jednom linijom:
+Za novu fotografiju u galeriji: stavite sliku u `assets/radovi/` (JPG, širine do 1400 px, do 300 KB), pa u `index.html` kopirajte jednu `<article class="card reveal">` karticu i promenite `src`, `alt`, oznaku faze i naslov.
 
-```html
-<img src="assets/radovi/kuca-1.jpg" alt="Spratna kuća sa dvorištem" loading="lazy">
-```
-
-Mesta za slike: glavna fotografija u hero sekciji, fotografija ekipe u sekciji "Kako radimo" i pet kartica u sekciji "Radovi". Na karticama promenite i naslov i reč "Lokacija" u stvarno mesto.
+Za drugi video u hero sekciji: zamenite `assets/video/betoniranje-hero.mp4` i naslovnu sliku `betoniranje-hero.jpg` (MP4, H.264, bez zvuka, do 2 MB), pa promenite tekst u kartici ispod videa.
 
 ## Spoljni resursi
 
 - Font Inter: Google Fonts
 - Font Lato 2.0 (naslovi, puna podrška za Č, Ć, Ž, Š, Đ): jsDelivr, paket `lato-font@3.0.0`
 
-Instagram: https://www.instagram.com/pronadji__majstora__/
+## Boje
+
+- Pozadina: `#f5f2ec`, tekst: `#1d1b18`
+- Zlatna iz logotipa: `#c7a663`, tamnija zlatna za tekst na svetloj pozadini: `#8c6d31`
+- Tamna (footer, Instagram okvir): `#121212`
